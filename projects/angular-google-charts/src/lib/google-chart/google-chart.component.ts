@@ -85,7 +85,11 @@ export class GoogleChartComponent implements OnInit, OnChanges {
   }
 
   public get chart() {
-    return this.chartWrapper.getChart();
+    if (this.chartWrapper) {
+      return this.chartWrapper.getChart();
+    }
+
+    return null;
   }
 
   protected get parsedOptions() {
@@ -98,7 +102,11 @@ export class GoogleChartComponent implements OnInit, OnChanges {
   }
 
   public createSnapshotImage(): string {
-    return this.chart.getImageURI();
+    if (this.chart) {
+      return this.chart.getImageURI();
+    }
+
+    return null;
   }
 
   public setSelection(selection: Array<{row: number, column: number}>) {

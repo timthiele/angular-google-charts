@@ -204,6 +204,47 @@ export class MainComponent implements OnInit {
       ],
       roles: []
     });
+
+    this.charts.push({
+      title: "Organizational Chart View",
+      type: 'OrgChart',
+      columnNames: ['Name', 'Manager', 'Tooltip'],
+      data: [
+        ['ROA, ROIC, ROE', '', 'Return on Assets'],
+        ['TA', 'ROA, ROIC, ROE', 'Total Assets'],
+        ['NOPAT', 'ROA, ROIC, ROE', 'Net Operating Profit After Tax'],
+        ['IC', 'ROA, ROIC, ROE', 'Invested Capital'],
+        ['TE', 'ROA, ROIC, ROE', 'Total Equity'],
+        ['Exp', 'NOPAT', 'Expenses'],
+        ['Tax', 'NOPAT', 'Tax Rate'],
+        ['OR', 'NOPAT', 'Operating Revenue'],
+        ['TA', 'ROA', 'Total Assets'],
+        ['Utl', 'Exp', 'Utilities'],
+        ['Opex', 'Exp', 'Operational Expenditure'],
+        ['Oexp', 'Exp', 'Other Expenses'],
+        ['UntS', 'OR', 'Units Sold'],
+        ['SP', 'OR', 'Sales Price'],
+        ['Lbr', 'Opex', 'Labour Costs'],
+        ['Mnt', 'Opex', 'Maintenance Costs'],
+        ['Stock', 'UntS', 'Stock / Units Not Sold'],
+        ['UntPr', 'UntS', 'Units Produced'],
+        ['PCap', 'UntPr', 'Plant Capacity'],
+        ['TCU', 'UntPr', 'Total Capacity Utilization'],
+        ['OEE', 'TCU', 'Overall Equipment Effectiveness'],
+        ['Utz', 'TCU', 'Utilization'],
+        ['A', 'OEE', 'Availability'],
+        ['P', 'OEE', 'Performance'],
+        ['Q', 'OEE', 'Quality']
+      ],
+      options: {
+        title: 'Organizational Chart View',
+        allowHtml: true,
+        allowCollapse: true,
+        nodeClass: 'defaultNode',
+        selectedNodeClass: 'selectedNode'
+      },
+      roles: []
+    });
   }
 
   onReady() {
@@ -237,6 +278,13 @@ export class MainComponent implements OnInit {
       ['Gold', Math.random() * 20.0],
       ['Platinum', Math.random() * 20.0],
     ];
+  }
+
+  getChartUri(): string {
+    if (this.chart){
+      return this.chart.createSnapshotImage();
+    }
+    return null;
   }
 
   navigateToTest() {

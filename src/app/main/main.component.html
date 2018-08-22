@@ -22,7 +22,8 @@
     [data]="changingChart.data"
     [columnNames]="changingChart.columnNames"
     [options]="changingChart.options">
-  </google-chart>
+</google-chart>
 
+<a [href]="getChartUri()">Show Chart Image</a>
 <button (click)="changeChart()">Change Data</button>
 <button (click)="navigateToTest()">Navigate</button>
