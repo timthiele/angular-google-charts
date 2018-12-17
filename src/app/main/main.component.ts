@@ -302,12 +302,13 @@ export class MainComponent implements OnInit {
   }
 
   changeChart() {
-    this.changingChart.data = [
+    /*this.changingChart.data = [
       ['Copper', Math.random() * 20.0],
       ['Silver', Math.random() * 20.0],
       ['Gold', Math.random() * 20.0],
       ['Platinum', Math.random() * 20.0],
-    ];
+    ];*/
+    this.changingChart.data[0][1] = Math.random() * 20.0;
   }
 
   navigateToTest() {

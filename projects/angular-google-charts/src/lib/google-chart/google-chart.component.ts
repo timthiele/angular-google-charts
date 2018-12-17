@@ -2,7 +2,8 @@
 
 import {
   Component, OnInit, ElementRef, Input, ChangeDetectionStrategy,
-  OnChanges
+  OnChanges,
+  DoCheck
 } from '@angular/core';
 
 import { ScriptLoaderService } from '../script-loader/script-loader.service';
@@ -17,7 +18,7 @@ import {Role} from '../models/role.model';
   exportAs: 'google-chart',
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class GoogleChartComponent extends RawChartComponent implements OnInit, OnChanges {
+export class GoogleChartComponent extends RawChartComponent implements OnInit, OnChanges, DoCheck {
 
   @Input()
   data: Array<Array<string | number>>;
@@ -73,6 +74,10 @@ export class GoogleChartComponent extends RawChartComponent implements OnInit, O
     }
 
     super.ngOnChanges();
+  }
+
+  ngDoCheck() {
+
   }
 
   protected parseOptions(): any {

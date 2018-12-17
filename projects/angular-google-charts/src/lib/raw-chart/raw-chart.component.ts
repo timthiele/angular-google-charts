@@ -1,7 +1,7 @@
 /// <reference types="google.visualization"/>
 
 import {
-  Component, ChangeDetectionStrategy, Input, Output, EventEmitter, ElementRef, OnInit, OnChanges, AfterViewInit
+  Component, ChangeDetectionStrategy, Input, Output, EventEmitter, ElementRef, OnInit, OnChanges, AfterViewInit, DoCheck
 } from '@angular/core';
 import { Observable, fromEvent } from 'rxjs';
 import { debounceTime } from 'rxjs/operators';
@@ -18,7 +18,7 @@ import { GoogleChartPackagesHelper } from '../helpers/google-chart-packages.help
   exportAs: 'raw-chart',
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class RawChartComponent implements OnInit, OnChanges, AfterViewInit {
+export class RawChartComponent implements OnInit, OnChanges, AfterViewInit, DoCheck {
 
   @Input()
   chartData: google.visualization.ChartSpecs;
@@ -68,6 +68,9 @@ export class RawChartComponent implements OnInit, OnChanges, AfterViewInit {
     if (this.wrapper) {
       this.updateChart();
     }
+  }
+
+  ngDoCheck() {
   }
 
   public getChartElement(): HTMLElement {
