@@ -241,4 +241,48 @@ describe('RawChartComponent', () => {
       });
     }));
   });
+
+  describe('Input change tests', () => {
+    let dataTable = [
+      ['Topping', 'Slices'],
+      ['Mushrooms', 3],
+      ['Onions', 1],
+      ['Olives', 1],
+      ['Zucchini', 1],
+      ['Pepperoni', 2]
+    ];
+
+    beforeEach((done) => {
+      fixture = TestBed.createComponent(RawChartComponent);
+      component = fixture.componentInstance;
+      component.chartData = {
+        chartType: 'BarChart',
+        dataTable: dataTable,
+        options: {
+          title: 'Generic Chart'
+        }
+      };
+
+      fixture.detectChanges();
+
+      component.ready.subscribe(() => {
+        done();
+      });
+    });
+
+    it('should detect changes by reference and redraw chart', () => {
+      dataTable = [
+        ['Topping', 'Slices'],
+        ['Mushrooms', 3],
+        ['Onions', 5],
+        ['Olives', 2],
+        ['Zucchini', 1],
+        ['Pepperoni', 2]
+      ];
+    });
+
+    it('should detect changes by ngDoCheck and redraw chart', () => {
+      dataTable[1][2] = 4;
+    });
+  });
 });
