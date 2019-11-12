@@ -20,6 +20,9 @@ module.exports = function (config) {
       reports: ['html', 'lcovonly'],
       fixWebpackSourcePaths: true
     },
+    jasmine: {
+      timeoutInterval: 6000
+    },
     reporters: ['progress', 'kjhtml'],
     port: 9876,
     colors: true,

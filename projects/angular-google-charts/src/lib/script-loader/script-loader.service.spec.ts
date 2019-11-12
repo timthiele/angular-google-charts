@@ -1,5 +1,5 @@
-import { TestBed, async } from '@angular/core/testing';
 import { Provider } from '@angular/core';
+import { async, TestBed } from '@angular/core/testing';
 
 import { ScriptLoaderService } from './script-loader.service';
 

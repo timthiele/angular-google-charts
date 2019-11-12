@@ -1,8 +1,8 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { MainComponent } from './main.component';
 import { NO_ERRORS_SCHEMA } from '@angular/core';
 import { Router } from '@angular/router';
+import { MainComponent } from './main.component';
 
 const routerSpy = jasmine.createSpyObj('Router', ['navigateByUrl']);
 

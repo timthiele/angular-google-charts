@@ -1,11 +1,11 @@
-import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { BrowserModule } from '@angular/platform-browser';
 
 import { GoogleChartsModule } from 'projects/angular-google-charts/src/public_api';
-import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
-import { TestComponent } from './test/test.component';
+import { AppComponent } from './app.component';
 import { MainComponent } from './main/main.component';
+import { TestComponent } from './test/test.component';
 
 @NgModule({
   declarations: [AppComponent, TestComponent, MainComponent],

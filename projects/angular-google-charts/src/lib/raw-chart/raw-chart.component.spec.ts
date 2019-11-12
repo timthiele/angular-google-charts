@@ -1,7 +1,7 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { RawChartComponent } from './raw-chart.component';
 import { ScriptLoaderService } from '../script-loader/script-loader.service';
+import { RawChartComponent } from './raw-chart.component';
 
 describe('RawChartComponent', () => {
   let component: RawChartComponent;

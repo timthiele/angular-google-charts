@@ -1,9 +1,9 @@
-import { NgModule, Provider, LOCALE_ID, ModuleWithProviders } from '@angular/core';
+import { LOCALE_ID, ModuleWithProviders, NgModule, Provider } from '@angular/core';
 
-import { ScriptLoaderService } from './script-loader/script-loader.service';
-import { RawChartComponent } from './raw-chart/raw-chart.component';
 import { GoogleChartComponent } from './google-chart/google-chart.component';
-import { GOOGLE_API_KEY, CHART_VERSION } from './models/injection-tokens.model';
+import { CHART_VERSION, GOOGLE_API_KEY  } from './models/injection-tokens.model';
+import { RawChartComponent } from './raw-chart/raw-chart.component';
+import { ScriptLoaderService } from './script-loader/script-loader.service';
 
 export const GOOGLE_CHARTS_PROVIDERS: Provider[] = [
   {
