@@ -38,6 +38,15 @@ export class RawChartComponent implements OnInit, OnChanges, AfterViewInit {
       }>;
 
   @Input()
+  public colorByRowLabel = false;
+
+  @Input()
+  public groupByRowLabel = false;
+
+  @Input()
+  public showRowLabels = false;
+
+  @Input()
   public dynamicResize = false;
 
   @Input()
