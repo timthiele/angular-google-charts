@@ -44,6 +44,15 @@ export class RawChartComponent implements OnInit, OnChanges, AfterViewInit {
   @Input()
   firstRowIsData = false;
 
+  @Input()
+  colorByRowLabel = false;
+
+  @Input()
+  groupByRowLabel = false;
+
+  @Input()
+  showRowLabels = false;
+
   @Output()
   error = new EventEmitter<ChartErrorEvent>();
 
