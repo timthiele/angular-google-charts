@@ -1,6 +1,6 @@
 {
   "name": "angular-google-charts",
-  "version": "0.1.5",
+  "version": "0.1.7",
   "description": "A wrapper of the Google Charts library written with Angular 6",
   "keywords": [
     "Angular",
@@ -27,7 +27,7 @@
     "email": "gabriel.sperrer@gmail.com"
   },
   "dependencies": {
-    "@types/google.visualization": "0.0.43"
+    "@types/google.visualization": "~0.0.49"
   },
   "peerDependencies": {
     "@angular/common": "^6.0.0-rc.0 || ^6.0.0 || ^7.0.0 || ^8.0.0",
